@@ -4,11 +4,15 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+
 " mappings
 imap jj <Esc>
 
 " My own configs
 set number
+set noshowmode 
+set encoding=utf-8
+syntax enable
 
 " colors
 colorscheme wombat256
@@ -20,7 +24,7 @@ set laststatus=2
 
 "" sets to display all buffers when there is only 1 tab open
 let g:airline#extensions#tabline#enabled=1
-
+let g:solarized_termcolors=256
 let g:airline_powerline_fonts = 1
 let g:airline_theme='badwolf'
 
@@ -69,3 +73,13 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 
 set t_Co=256
+
+"vim-go configs
+let g:go_fmt_command="goimports"
+
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_fields=1
+let g:go_highlight_types=1
+let g:go_highlight_operators=1
+let g:go_highlight_build_constraints=1
